@@ -34,6 +34,41 @@ class XxTestController3 extends AdminController
             });
     }
 
+    public function show($id, Content $content)
+    {
+        return $content
+            ->header('详情')
+            ->description(' ')
+            // ->body($this->detail($id));
+            ->row(function ($row) use ($id) {
+                $row->column(10, $this->detail($id));
+                $row->column(2, view('xxtest.sidebar'));
+            });
+    }
+
+    public function edit($id, Content $content)
+    {
+        return $content
+            ->header('编辑')
+            ->description(' ')
+            // ->body($this->form()->edit($id));
+            ->row(function ($row) use ($id) {
+                $row->column(10, $this->form()->edit($id));
+                $row->column(2, view('xxtest.sidebar'));
+            });
+    }
+
+    public function create(Content $content)
+    {
+        return $content
+            ->header('新建')
+            ->description(' ')
+            // ->body($this->form());
+            ->row(function ($row) {
+                $row->column(10, $this->form());
+                $row->column(2, view('xxtest.sidebar'));
+            });
+    }
 
 
     /**
