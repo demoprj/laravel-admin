@@ -22,7 +22,9 @@ use Encore\Admin\Grid\Column;
 use Encore\Admin\Show;
 
 Column::extend('xx_formatter_status', App\Admin\Extensions\Column\XxStatus::class);
+Column::extend('xx_datetime', App\Admin\Extensions\Column\XxDateTimeFormatter::class);
 Show::extend('xx_formatter_status', App\Admin\Extensions\Show\XxStatus::class);
+Show::extend('xx_datetime', App\Admin\Extensions\Show\XxDateTimeFormatter::class);
 
 // use Encore\Admin\Admin;
 // Admin::disablePjax();

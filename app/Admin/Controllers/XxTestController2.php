@@ -314,9 +314,11 @@ class XxTestController2 extends AdminController
         // $show->field('deleted_at', __('Deleted at'));
         $show->divider();
         $show->field('created_by_obj.name', '创建者');
-        $show->created_at('创建时间');
+        // $show->created_at('创建时间');
+        $show->created_at('创建时间')->xx_datetime();
         $show->field('updated_by_obj.name', '更新者');
-        $show->updated_at('更新时间');
+        // $show->updated_at('更新时间');
+        $show->updated_at('更新时间')->xx_datetime('Y-m-d H:i');
         $show->field('deleted_by_obj.name', '删除者');
         $show->deleted_at('删除时间');
 

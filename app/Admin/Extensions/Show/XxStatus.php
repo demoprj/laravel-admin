@@ -10,12 +10,15 @@ use Encore\Admin\Show\AbstractField;
 // Column::extend('xx_formatter_status', XxStatus::class);
 class XxStatus extends AbstractField
 {
+    public $border = true;
+    public $escape = false;
+
     public function render($arg = '')
     {
         // $this->value;
         // $this->model;
-        $this->border = false;
-        // $this->escape = true;
+        // $this->border = true;
+        // $this->escape = false;
 
         switch ($this->value) {
             case 0:
