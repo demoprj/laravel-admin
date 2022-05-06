@@ -22,4 +22,15 @@ Route::group([
     $router->resource('/xxtest3', XxTestController3::class);
     //
     $router->resource('/xxtest_bad', XxTestControllerBad::class);
+    
 });
+
+
+Route::group([
+    'prefix'        => config('admin.route.prefix'),
+    'middleware'    => config('admin.route.middleware'),
+    'as'            => config('admin.route.prefix') . '.',
+], function (Router $router) {
+    $router->resource('/form/xxtest_form', App\Admin\Forms\FormTest::class);
+});
+

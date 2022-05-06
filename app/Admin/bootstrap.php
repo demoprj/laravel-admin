@@ -37,6 +37,7 @@ Show::extend('xx_datetime', App\Admin\Extensions\Show\XxDateTimeFormatter::class
 
 Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
     $navbar->right(new App\Admin\Actions\Feedback())
+        ->right(new App\Admin\XxActions\FsApprovalForm())
         ->right(new App\Admin\Actions\System());
     $navbar->right(App\Admin\Extensions\Nav\Shortcut::make([
         'Posts' => 'posts/create',
@@ -49,6 +50,7 @@ Admin::navbar(function (\Encore\Admin\Widgets\Navbar $navbar) {
     ], 'fa-plus')->title('新建'));
 
     $navbar->right(new App\Admin\Extensions\Nav\Dropdown());
+    $navbar->right(new App\Admin\Extensions\Nav\ShoppingCart());
 });
 
 //
